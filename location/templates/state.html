@@ -1,0 +1,5 @@
+<select name="state" onchange="getCity(this.value)" >
+{%for state in states%}
+  <option value="{{state.1}}" >{{state.0}}</option>
+        {%endfor%}
+		</select>

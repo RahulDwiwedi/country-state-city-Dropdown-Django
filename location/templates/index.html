@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	{% load static %}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="{% static 'main.js' %}"></script> 
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+		
+	</head>
+	
+	
+	
+	<body>
+	
+				
+		<form method="post" action="" name="form1" id="locationform">{%csrf_token%}
+		<center>
+			<table width="45%"  cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="75">Country</td>
+					<td width="50">:</td>
+					<td  width="150">
+					  <select name="country" onChange="getState(this.value)">
+						<option value="Select Country">Select Country</option>
+						{%for con in country%}
+						<option value="{{con.1}}">{{con.0}}</option>
+						{%endfor%}
+					  </select>
+					</td>
+				</tr>
+				<tr>
+					<td>State</td>
+					<td width="50">:</td>
+					<td >
+						<div id="statediv">
+							<select name="state">
+								<option value="">Select State</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>City</td>
+					<td width="50">:</td>
+					<td>
+						<div id="citydiv">
+							<select name="city" >
+								<option value="">Select City</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit" onclick="result()">
+			<div id="result"></div>
+		  
+		</center>
+
+		</form>
+
+
+
+		
+    </body>
+</html>
+  
