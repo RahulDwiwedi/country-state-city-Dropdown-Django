@@ -53,7 +53,6 @@ def city_view(request,id):
         
 #  populate the Country,State,City on the Index page.
 def location_view(request,conid,sid,cid):
-    print (conid,sid,cid)
     cnx = mysql.connector.connect(user='root', password="rahul", host="localhost", database='location')
     cursorCon = cnx.cursor()
     cursorS = cnx.cursor()
